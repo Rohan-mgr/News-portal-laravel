@@ -6,13 +6,14 @@ use Illuminate\Http\Request;
 use App\Models\newsArticle;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+use App\Models\todoList;
 
 
 class NewsArticleController extends Controller
 {
     //
     public function index() {
-        return view("dashboard");
+        return view("dashboard", ['items'=>todoList::all()]);
     }
 
     public function handleLogin() {

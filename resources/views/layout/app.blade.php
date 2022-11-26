@@ -29,7 +29,7 @@
                 <ul class="navbar-nav mb-2 mb-lg-0">
                     @auth
                     <li class="nav-item">
-                        <a class="nav-link" href="/user">{{auth()->user()->name}}</a>
+                        <a class="nav-link" href="#">{{auth()->user()->name}}</a>
                     </li>
                     <li class="nav-item mx-2">
                         <form action="{{route('logout')}}" method="get">
