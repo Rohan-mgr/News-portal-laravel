@@ -14,6 +14,7 @@
         <tr class="table-primary">
             <th scope="col">S.N</th>
             <th scope="col">TajaKhabar Title</th>
+            <th scope="col">Created By</th>
             <th scope="col">Actions</th>
         </tr>
     </thead>
@@ -23,6 +24,7 @@
         <tr class="table-primary">
             <th scope="row">{{$loop->index + 1}}</th>
             <td>{{$value->Title}}</td>
+            <td>{{$value->newsArticle->name}}</td>
             <!-- <td>{{$value->id}}</td> -->
             <td>
                 <a class="btn btn-primary" href="/edit/{{$value->id}}">Edit</a>

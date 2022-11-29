@@ -13,7 +13,8 @@ class NewsArticleController extends Controller
 {
     //
     public function index() {
-        return view("dashboard", ['items'=>todoList::all()]);
+        $items = todoList::where('user_id', '=', auth()->user()->id)->get();
+        return view("dashboard", compact('items'));
     }
 
     public function handleLogin() {
