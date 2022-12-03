@@ -10,6 +10,13 @@ class TodoListController extends Controller
     public function saveTodo(Request $req) {
         $todoObj = new todoList();
         $todoObj->Title = $req->todoItem;
+        $todoObj->user_id = auth()->user()->id;
+
+        $image = $req->file('image');
+        $response = $image->store('image', 'public');
+        $file_path = asset('/storage/'. $response);
+        
+        $todoObj->image = $file_path;
         $todoObj->save();
         return redirect()->route('home');
     }

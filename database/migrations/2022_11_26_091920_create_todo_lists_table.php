@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('todo_lists', function (Blueprint $table) {
             $table->id();
             $table->string("Title");
+            $table->string("image");
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('news_articles')->onDelete('cascade');
             $table->timestamps();
